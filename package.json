@@ -4,9 +4,13 @@
   "description": "random draw generator for students testing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d src"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Haoliang Zhang",
+  "homepage": "https://HaoLZz.github.io/random-draw",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.0.0"
+  }
 }
