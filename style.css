@@ -1,7 +1,32 @@
-/* general */
-
-* {
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
     box-sizing: border-box;
+}
+
+/* inherit border-box on all elements in the universe and before and after
+   */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Geneva, sans-serif;
+}
+
+a {
+    color: #2772B0;
+}
+
+.wrapper {
+    width: 97%;
+    max-width: 1200px;
+    margin: 0 auto;
+    float: none;
 }
 
 html {
@@ -10,33 +35,39 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+
     font-family: Yahei, Arial, Helvetica, sans-serif;
     background-color: #34495e;
 }
 
+
+/* Flexbox grid */
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-1 {
+    flex: 0 0 80%;
+}
+
 header {
-    display: block;
     text-align: center;
     font-size: 2rem;
     color: white;
-    margin-top: 50px;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 .container {
-    width: 300px;
-    height: 300px;
+    width: 80vw;
+    height: 80vw;
     border-radius: 50%;
-    padding: 40px;
+    padding: 20px;
     background-color: #191919;
+    margin: 5vh auto;
 }
 
 .number-wrapper {
@@ -53,38 +84,41 @@ header {
     display: inline-block;
 }
 
-.btn {
-    position: relative;
+/* User-input form styling */
+.form.row {
+    width: 80%;
+}
+
+.form.row>* {
     text-align: center;
-    font-size: 0.5em;
-    margin: 10px auto;
+    flex: 0 0 60%;
+    color: white;
+}
+
+.btn {
+    font-size: 1.5rem;
+    color: white;
+    margin: 10px 0;
     background: none;
     outline: none;
-    color: white;
-    padding: 15px 20px;
+    padding: 5px;
     border: 2px solid #3498db;
-    border-radius: 24px;
+    border-radius: 10px;
 }
 
 input {
     border: 0;
     background: none;
-    width: 250px;
-    margin: 20px auto;
+    margin: 20px 0;
     font-size: 1rem;
     padding: 14px 10px;
     display: block;
     text-align: center;
-    color: white;
     border: 2px solid #3498db;
     border-radius: 24px;
     transition: 0.25s;
 }
 
-input.btn {
-    font-size: 1.5rem;
-    width: 150px;
-}
 
 .btn:hover {
     background: #2ecc71;
@@ -154,25 +188,15 @@ span {
     top: -9em;
 }
 
-/* small screen */
-@media screen and (max-width: 400px) {
-    body {
-        display: flex;
+/* tablet screen */
+@media screen and (min-width: 400px) {
+    .container {
+        max-width: 300px;
+        max-height: 300px;
     }
 
-    .center{
-        flex-wrap: wrap;
-        flex: 1 1 80%;
-    }
-
-    form {
-        width: 300px;
-        margin: 0 auto;
-        padding: 30px 15px;
-    }
-
-    .header {
-        display: none;
+    .form.row {
+        max-width: 200px;
     }
 }
 
@@ -181,5 +205,9 @@ span {
     html {
         font-size: 120%;
         /* 20px */
+    }
+
+    .form.row {
+        max-width: 240px;
     }
 }
