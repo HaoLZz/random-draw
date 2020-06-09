@@ -67,7 +67,7 @@ header {
     border-radius: 50%;
     padding: 20px;
     background-color: #191919;
-    margin: 0 auto;
+    margin: 5vh auto;
 }
 
 .number-wrapper {
@@ -98,7 +98,7 @@ header {
 .btn {
     font-size: 1.5rem;
     color: white;
-    margin: 10px auto;
+    margin: 10px 0;
     background: none;
     outline: none;
     padding: 5px;
@@ -109,8 +109,7 @@ header {
 input {
     border: 0;
     background: none;
-    width: 250px;
-    margin: 20px auto;
+    margin: 20px 0;
     font-size: 1rem;
     padding: 14px 10px;
     display: block;
@@ -189,26 +188,16 @@ span {
     top: -9em;
 }
 
-/* small screen */
-@media screen and (max-width: 400px) {
-    body {
-        display: flex;
+/* tablet screen */
+@media screen and (min-width: 400px) {
+    .container {
+        max-width: 300px;
+        max-height: 300px;
     }
 
-    .center {
-        flex-wrap: wrap;
-        flex: 1 1 80%;
+    .form.row {
+        max-width: 200px;
     }
-
-    form {
-        width: 300px;
-        margin: 0 auto;
-        padding: 30px 15px;
-    }
-
-    /* .header {
-        display: none;
-    } */
 }
 
 /* large screen */
@@ -216,5 +205,9 @@ span {
     html {
         font-size: 120%;
         /* 20px */
+    }
+
+    .form.row {
+        max-width: 240px;
     }
 }
