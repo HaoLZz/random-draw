@@ -1,5 +1,5 @@
 var NUM_QUESTIONS = 30;
-var randNumber;
+var randNumber = 0;
 window.onload = function () {
     var spinner = document.getElementById('spinner');
     spinner.onclick = spinit;
@@ -35,12 +35,21 @@ function spinit() {
     for (i = 0; i < el.length; i++) {
         el[i].classList.toggle('animate');
     }
-    randNumber = generateRandomInteger(1, NUM_QUESTIONS);
+    var different = false;
+    while (!different) {
+        var temp = generateRandomInteger(1, NUM_QUESTIONS);
+        if (temp != randNumber) {
+            randNumber = temp;
+            different = true;
+        }
+    }
+
     console.log("randNumber", randNumber);
 }
 
 function getNumber() {
     var number = document.getElementById('number');
+    // Check if user input is a two-digit number
     var reg = /\d{2}/;
     var userInput = number.value;
     NUM_QUESTIONS = reg.test(userInput) && userInput.length <= 2 ? Number(userInput) : 30;
