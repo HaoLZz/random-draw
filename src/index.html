@@ -2,32 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>题目抽签</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>题目抽签</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <div class="wrapper">
     <header class="header">题目抽签生成器</header>
-    <div class="container center">
-        <div class="number-wrapper center">
-              <div>
-                <span id='digit1'>1 2 3 4 5 6 7 8 9 0</span>
-              </div>
-              
-              <div>
-                <span id='digit2'>1 2 3 4 5 6 7 8 9 0</span>
-              </div>
-              <button id='spinner' class="btn">点击抽签</button>
-        </div>
-    </div>
-    <form>
-        <input type="text" id = "number" name="number" placeholder="请输入题目数量(默认30道)" title="1-99">
+    <div class="row">
+      <form class="form row">
+        <label for="number">请输入题目数量</label>
+        <input type="text" id="number" name="number" placeholder="默认30道" title="1-99">
         <input type="button" value="确认" id="submit" class="btn">
-    </form>
-    <script src="./UI.js"></script>
+      </form>
+    </div>
+    <div class="container row">
+      <div class="number-wrapper row">
+        <div class="col-1">
+          <div>
+            <span id='digit1'>1 2 3 4 5 6 7 8 9 0</span>
+          </div>
+          <div>
+            <span id='digit2'>1 2 3 4 5 6 7 8 9 0</span>
+          </div>
+        </div>
+        <button id='spinner' class="btn col-1">点击抽签</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./UI.js"></script>
 </body>
 
 </html>
